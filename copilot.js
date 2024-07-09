@@ -219,14 +219,3 @@ person.address = {
 };
 
 console.log(person);
-
-
-function filterObject(obj, condition) {
-    const filteredObj = {};
-    for (const key in obj) {
-        if (condition(obj[key])) {
-            filteredObj[key] = obj[key];
-        }
-    }
-    return filteredObj;
-}
