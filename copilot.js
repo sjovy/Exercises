@@ -72,23 +72,120 @@ function isFirstJanuarySunday() {
 isFirstJanuarySunday();
 
 
-// 4. JavaScript program to calculate multiplication and division of two numbers (input from the user)
+// 5. JavaScript program to convert temperatures to and from Celsius, Fahrenheit
 
-function calculateMultiplicationAndDivision() {
-    // Get input from the user
-    const num1 = parseFloat(prompt("Enter the first number:"));
-    const num2 = parseFloat(prompt("Enter the second number:"));
-
-    // Calculate multiplication and division
-    const multiplication = num1 * num2;
-    const division = num1 / num2;
-
-    // Display the results
-    console.log(`Multiplication: ${multiplication}`);
-    console.log(`Division: ${division}`);
+function convertTemperature(temperature, unit) {
+    if (unit === 'C') {
+        // Convert Celsius to Fahrenheit
+        const fahrenheit = (temperature * 9/5) + 32;
+        return fahrenheit;
+    } else if (unit === 'F') {
+        // Convert Fahrenheit to Celsius
+        const celsius = (temperature - 32) * 5/9;
+        return celsius;
+    } else {
+        console.log('Invalid unit');
+    }
 }
 
-// Call the function to calculate multiplication and division
-calculateMultiplicationAndDivision();
+// Test the function
+const celsiusTemperature = 25;
+const convertedToFahrenheit = convertTemperature(celsiusTemperature, 'C');
+console.log(`${celsiusTemperature} degrees Celsius is equal to ${convertedToFahrenheit} degrees Fahrenheit`);
+
+const fahrenheitTemperature = 77;
+const convertedToCelsius = convertTemperature(fahrenheitTemperature, 'F');
+console.log(`${fahrenheitTemperature} degrees Fahrenheit is equal to ${convertedToCelsius} degrees Celsius`);
 
 
+// 6. JavaScript program to remove a character at the specified position in a given string
+
+function removeCharacter(str, position) {
+    // Convert the string to an array
+    const arr = str.split('');
+
+    // Remove the character at the specified position
+    arr.splice(position, 1);
+
+    // Convert the array back to a string
+    const modifiedStr = arr.join('');
+
+    // Return the modified string
+    return modifiedStr;
+}
+
+// Test the function
+const inputString = 'Hello, World!';
+const positionToRemove = 7;
+const modifiedString = removeCharacter(inputString, positionToRemove);
+console.log(`Modified string: ${modifiedString}`);
+
+
+// 7. JavaScript program to reverse a given string
+
+function reverseString(str) {
+    // Convert the string to an array
+    const arr = str.split('');
+
+    // Reverse the array
+    const reversedArr = arr.reverse();
+
+    // Convert the array back to a string
+    const reversedStr = reversedArr.join('');
+
+    // Return the reversed string
+    return reversedStr;
+}
+
+// Test the function
+const inputString = 'Hello, World!';
+const reversedString = reverseString(inputString);
+console.log(`Reversed string: ${reversedString}`);
+
+
+// 8. JavaScript program to calculate the sum of all elements in an array
+
+function calculateSum(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+// Test the function
+const numbers = [1, 2, 3, 4, 5];
+const sum = calculateSum(numbers);
+console.log(`Sum of all elements: ${sum}`);
+
+
+// 9. JavaScript program to find the largest element in an array
+
+function findLargestElement(arr) {
+    let largest = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    return largest;
+}
+
+// Test the function
+const numbers = [10, 5, 20, 15, 30];
+const largestElement = findLargestElement(numbers);
+console.log(`Largest element: ${largestElement}`);
+
+
+// 10. JavaScript program to filter out even numbers from an array
+
+function filterEvenNumbers(arr) {
+    // Use the filter method to create a new array with only the even numbers
+    const evenNumbers = arr.filter(num => num % 2 === 0);
+    return evenNumbers;
+}
+
+// Test the function
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const evenNumbers = filterEvenNumbers(numbers);
+console.log(`Even numbers: ${evenNumbers}`);
