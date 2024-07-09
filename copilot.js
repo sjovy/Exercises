@@ -189,3 +189,44 @@ function filterEvenNumbers(arr) {
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const evenNumbers = filterEvenNumbers(numbers);
 console.log(`Even numbers: ${evenNumbers}`);
+
+
+// 11-14. JavaScript program to create an object representing a person
+
+const person = {
+    name: 'John Doe',
+    age: 30,
+    address: '123 Main St'
+};
+
+console.log(person);
+
+
+// return property address from object person
+console.log(person.address);
+
+
+// delete the age property from the object person and add property email, then display person
+delete person.age;
+person.email = 'test@test.com';
+console.log(person);
+
+//add nested object address to person, with properties street, city, and zip
+person.address = {
+    street: '456 Elm St',
+    city: 'Springfield',
+    zip: '12345'
+};
+
+console.log(person);
+
+
+function filterObject(obj, condition) {
+    const filteredObj = {};
+    for (const key in obj) {
+        if (condition(obj[key])) {
+            filteredObj[key] = obj[key];
+        }
+    }
+    return filteredObj;
+}
